@@ -1,4 +1,39 @@
+# 引入styled-Components管理样式
+```npm install styled-components```
+将css样式变成js文件：
+* 将src/index.css改为style.js
+```js
+// style.js
+import { createGlobalStyle } from 'styled-components'
+// 将css写成段落字符串
+export const GlobalStyled = createGlobalStyle`
+  body {
+    margin: 0;
+    background: red;
+  }
+`
+```
+* app.js中引入style.js
+```js
+import React from 'react';
+import { GlobalStyled } from './style.js';
 
+function App() {
+  return (
+    <div className="App">
+      <GlobalStyled><GlobalStyled />
+      hello world
+    </div>
+  );
+}
+
+
+export default App;
+```
+# 在所有浏览器上实现一个统一的样式
+为了在所有浏览器上的样式保持一致，需要引入一个统一的风格，百度reset.css,将对应样式放入到style.js中
+reset.css:https://meyerweb.com/eric/tools/css/reset/
+```js
 import { createGlobalStyle } from 'styled-components'
 // 段落字符串``
 export const GlobalStyled = createGlobalStyle`
@@ -46,12 +81,14 @@ export const GlobalStyled = createGlobalStyle`
     border-spacing: 0;
   }
 `
+```
 
-// body {
-//   margin: 0;
-//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-//     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-//     sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
+## styled-components好处与不好之处
+好处：
+* 实现样式局部化，避免全局污染
+  
+不好之处：
+* 没有css样式提示
+* 写法麻烦，不得于记忆
+
+

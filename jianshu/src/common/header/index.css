@@ -1,8 +1,121 @@
-/* body {
-  background: yellow;
-} */
-.content {
-  height: 300px;
-  width: 100%;
-  background: yellow;
+.iconfont {
+  padding-right: 8px;
+}
+.header {
+  height: 58px;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  width: 800px;
+  height:100%;
+}
+
+.title-menu-left {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  display: inline-block;
+  width: 100px;
+  height: 58px;
+  padding: 0;
+  background: url(~../../statics/logo.png);
+  background-size: 100% 100%;
+}
+.title-menu-item {
+  display: flex;
+  padding: 0 15px;
+  font-size: 17px;
+  color: #333333
+}
+.search-input {
+  padding: 0 40px 0 20px;
+  width: 160px;
+  height: 38px;
+  font-size: 14px;
+  border: 1px solid #eee;
+  border-radius: 40px;
+  background: #eee;
+  outline: none;
+}
+.search-input-focus {
+  width: 200px;;
+}
+/* .search-input */
+.slide-enter {
+  transition: all 0.2s ease-out;
+}
+/* .search-input */
+.slide-enter-active {
+  width: 200px;
+}
+/* .search-input. */
+.slide-enter-done {
+  width: 200px;
+}
+.search-input.slide-exit {
+  transition: all 0.2s ease-in;
+}
+
+.search-input.slide-exit-active {
+  width: 160px;
+}
+.search-input.slide-exit-done {
+  width: 160px;
+}
+.search-item {
+  position: relative;
+}
+.icon-fangdajing {
+  position: absolute;
+  right: 25px;
+  top: 8px;
+  padding: 3px;
+
+}
+.icon-fangdajing-focused {
+  border: 1px solid #999;
+  background: #999;
+  border-radius: 12px;
+  color: #fff;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  /* background: wheat; */
+  /* width: 200px; */
+  height: 100%;
+}
+.fuhao {
+  font-size: 24px;
+  color: #969696;
+}
+.menu-logo {
+  width: 56px;
+  height: 25px;
+  margin: 0 15px;
+  background: url(~../../statics/diamond.png);
+  background-size: 100% 100%;
+}
+.write {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #ea6f5a;
+  margin: 15px;
+}
+
+.icon-Aa {
+  font-size: 24px !important;
 }
