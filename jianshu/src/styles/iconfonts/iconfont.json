@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "14421728",
+      "name": "旋转画布",
+      "font_class": "xuanzhuan_huaban1",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
       "icon_id": "554032",
       "name": "笔",
       "font_class": "iconset0137",
