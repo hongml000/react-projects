@@ -20,8 +20,8 @@ export const getSearchList = () => {
       const totalList = res.data.data
       const length = totalList.length
       console.log(length)
+      // 注意，这里得dispatch出去
       dispatch(searchList(res.data.data))
-      
     }).catch(err =>{
       console.log(err)
     })
@@ -38,4 +38,9 @@ export const mouseIn = () => ({
 
 export const mouseOut = () => ({
   type: constants.MOUSE_OUT
+})
+
+export const toggleBackTop = (show) => ({
+  type: constants.TOGGLE_BACK_TOP,
+  show
 })

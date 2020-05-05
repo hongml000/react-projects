@@ -1,0 +1,18 @@
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border: 1px solid #f0f0f0;
+  background: #eee;
+  border-radius: 50%;
+  height: 50px;
+  width: 100px;
+  text-align: center;
+  padding:15px;
+  font-size: 14px;
+  line-height: 22px;
+  /* line-height: 100px; */
+}
+.back-to-top:hover {
+  background: #999999
+}

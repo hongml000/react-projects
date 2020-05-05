@@ -11,7 +11,8 @@ const stateDefault = fromJS({
   currentPage: 1,
   pageSize: 3,
   totalPage: 1, 
-  currentSearchList: []
+  currentSearchList: [],
+  showBackTop: false
 })
 
 const reducer = (state = stateDefault, action) => {
@@ -61,6 +62,9 @@ const reducer = (state = stateDefault, action) => {
     }
     console.log("newCurrentSearchList:", newCurrentSearchList.toJS())
     return state.set('currentSearchList', newCurrentSearchList).set('currentPage', curPage)
+  }
+  if(action.type === constants.TOGGLE_BACK_TOP) {
+    return state.set('showBackTop', action.show)
   }
   return state;
 }

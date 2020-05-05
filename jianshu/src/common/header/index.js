@@ -4,6 +4,8 @@ import './index.css'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
+import BackToTop from '../backTop'
+
 // function Header(props) {
 class Header extends Component {
   // constructor(props) {
@@ -36,7 +38,7 @@ class Header extends Component {
 
   }
   render() {
-    const { focused, handleFocus, handleBlur, searchList } = this.props;
+    const { focused, handleFocus, handleBlur, searchList,showBackTop } = this.props;
     return (
       <div>
         <div className="header">
@@ -79,8 +81,20 @@ class Header extends Component {
           </div>
         </div>
       </div>
+      {
+        showBackTop ?  <BackToTop /> : ''
+      }
+      
     </div>
     )
+  }
+  componentDidMount() {
+    // 挂载时，绑定滚动事件
+    window.addEventListener('scroll', this.props.changeScrollTopShow)
+  }
+  componentWillUnmount() {
+    // 销毁组件时，去除滚动事件
+    window.removeEventListener('scroll', this.props.changeScrollTopShow)
   }
 }
 
@@ -101,7 +115,9 @@ const mapStateToProps = (state) => {
     currentPage: state.getIn(['header', 'currentPage']),
     pageSize: state.getIn(['header', 'pageSize']),
     currentSearchList: state.getIn(['header', 'currentSearchList']),
-    mouseIn: state.getIn(['header', 'mouseIn'])
+    mouseIn: state.getIn(['header', 'mouseIn']),
+    showBackTop: state.getIn(['header', 'showBackTop'])
+
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -139,6 +155,14 @@ const mapDispatchToProps = (dispatch) => {
     },
     mouseLeave() {
       dispatch(actionCreators.mouseOut())
+    },
+    changeScrollTopShow(e) {
+      console.log(document.documentElement.scrollTop)
+      if(document.documentElement.scrollTop > 100) {
+        dispatch(actionCreators.toggleBackTop(true))
+      }else {
+        dispatch(actionCreators.toggleBackTop(false))
+      }
     }
   }
 }
