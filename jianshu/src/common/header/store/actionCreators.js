@@ -44,3 +44,8 @@ export const toggleBackTop = (show) => ({
   type: constants.TOGGLE_BACK_TOP,
   show
 })
+
+export const logout = () => ({
+  type: constants.LOGOUT
+})
+

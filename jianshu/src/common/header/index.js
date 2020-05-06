@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
 import BackToTop from '../backTop'
+import { Link } from 'react-router-dom'
 
 // function Header(props) {
 class Header extends Component {
@@ -38,7 +39,7 @@ class Header extends Component {
 
   }
   render() {
-    const { focused, handleFocus, handleBlur, searchList,showBackTop } = this.props;
+    const { focused, handleFocus, handleBlur, searchList,showBackTop, login, logout } = this.props;
     return (
       <div>
         <div className="header">
@@ -74,7 +75,9 @@ class Header extends Component {
             <div className="fuhao">
             <span className="iconfont icon-Aa"></span>
           </div>
-            <div className="menu-logo"></div>
+            <div >
+              { login ? <Link to="/login" onClick={logout}>退出</Link> : <Link to="/login">登录</Link>}
+            </div>
             <div className="write">
             <span className="iconfont icon-iconset0137"></span>
             写文章
@@ -116,7 +119,8 @@ const mapStateToProps = (state) => {
     pageSize: state.getIn(['header', 'pageSize']),
     currentSearchList: state.getIn(['header', 'currentSearchList']),
     mouseIn: state.getIn(['header', 'mouseIn']),
-    showBackTop: state.getIn(['header', 'showBackTop'])
+    showBackTop: state.getIn(['header', 'showBackTop']),
+    login: state.getIn(['login', 'login'])
 
   }
 }
@@ -163,6 +167,9 @@ const mapDispatchToProps = (dispatch) => {
       }else {
         dispatch(actionCreators.toggleBackTop(false))
       }
+    },
+    logout() {
+      dispatch(actionCreators.logout())
     }
   }
 }

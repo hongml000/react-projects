@@ -66,6 +66,9 @@ const reducer = (state = stateDefault, action) => {
   if(action.type === constants.TOGGLE_BACK_TOP) {
     return state.set('showBackTop', action.show)
   }
+  if(action.type === constants.LOGOUT) {
+    return state.set('login', false)
+  }
   return state;
 }
 
