@@ -5,7 +5,9 @@ import { actionCreators } from './store'
 class Detail extends Component {
   render() {
     console.log(this.props)
+    console.log("st:", this.props.st) 
     return (
+      // { }
       <div className="detail-container">
         <div className="detail-page">
           <h1 className="detail-title">{this.props.title}</h1>
@@ -22,6 +24,7 @@ class Detail extends Component {
 }
 
 const mapState = (state) =>({
+  st: state,
   title: state.getIn(['detail', 'title']),
   content: state.getIn(['detail', 'content'])
 })

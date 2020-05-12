@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Topics from './components/Topics'
-import Recommend from './components/Recommend'
+import Recommend from '@/components/Recommend'
 import Writers from './components/Writers'
 import List from './components/List'
 import './index.css'
