@@ -4,9 +4,10 @@ import { reducer as detailReducer } from '../pages/detail/store'
 // 将combineReducers从redux中获取改变从redux-immutable中获取 
 // import { combineReducers } from 'redux'
 import { combineReducers } from 'redux-immutable'
-
+import { reducer as loginReducer } from '../pages/login/store'
 export default combineReducers({
   header: headerReducer,
   home: homeReducer,
-  detail: detailReducer
+  detail: detailReducer,
+  login: loginReducer
 })
