@@ -8,6 +8,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Detail from './pages/detail'
 import Login from './pages/login'
+import 'antd/dist/antd.css';
 function App() {
   return (
     <div className="main">

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import Topics from './components/Topics'
+import Topics from '@/pages/home/components/Topics'
 import Recommend from './components/Recommend'
 import Writers from './components/Writers'
 import List from './components/List'
+import TestForm from './components/TestForm'
 import './index.css'
 import { connect } from 'react-redux'
 import * as actionCreators from './store/actionCreators'
@@ -19,6 +20,7 @@ class Home extends Component{
           <Recommend />
           <Writers />
         </div>
+        <TestForm></TestForm>
       </div>
     )
   }
