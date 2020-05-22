@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
-import Topics from './components/Topics'
+import Topics from '@/pages/home/components/Topics'
 import Recommend from './components/Recommend'
 import Writers from './components/Writers'
 import List from './components/List'
+<<<<<<< HEAD
 import Mychild from './components/Mychild'
+=======
+import TestForm from './components/TestForm'
+>>>>>>> 3f7e290179ec7570bca4efd7bf79ed54f5663c2d
 import './index.css'
 import { connect } from 'react-redux'
 import * as actionCreators from './store/actionCreators'
@@ -25,6 +29,7 @@ class Home extends Component{
             {'hahahah'}
           </Mychild>
         </div>
+        <TestForm></TestForm>
       </div>
     )
   }
