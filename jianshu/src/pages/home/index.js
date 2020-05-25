@@ -3,10 +3,12 @@ import Topics from '@/pages/home/components/Topics'
 import Recommend from './components/Recommend'
 import Writers from './components/Writers'
 import List from './components/List'
+import Mychild from './components/Mychild'
 import TestForm from './components/TestForm'
 import './index.css'
 import { connect } from 'react-redux'
 import * as actionCreators from './store/actionCreators'
+import TestuseReducer from './components/TestuseReducer'
 class Home extends Component{
   render() {
     return (
@@ -19,6 +21,10 @@ class Home extends Component{
         <div>
           <Recommend />
           <Writers />
+          <TestuseReducer />
+          <Mychild>
+            {'hahahah'}
+          </Mychild>
         </div>
         <TestForm></TestForm>
       </div>
